@@ -34,6 +34,13 @@ captures/
 
 # IntelliJ
 *.iml
+.idea/.name
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
@@ -41,25 +48,25 @@ captures/
 .idea/dictionaries
 .idea/libraries
 .idea/caches
-
-# Keystore files
-# Uncomment the following line if you do not want to check your keystore files in.
-#*.jks
+.idea/copyright/profiles_settings.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/sonarlint
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
 
 # Google Services (e.g. APIs or Firebase)
-google-services.json
+# google-services.json
 
-# Freeline
-freeline.py
-freeline/
-freeline_project_description.json
+# Local build properties
+# build.properties
+local.properties
 
-# fastlane
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
-fastlane/test_output
-fastlane/readme.md
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
