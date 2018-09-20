@@ -23,6 +23,6 @@ allprojects {
 
 ```
 dependencies {
-	implementation 'com.github.User:Repo:Tag'
+	 implementation 'com.github.LIBE-NUTES:SimpleBLEConnect:v0.1.0'
 }
 ```
