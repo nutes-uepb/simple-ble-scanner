@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">SimpleBLEConnect</string>
+    <string name="app_name">Simple BLE Connect</string>
+    <string name="title_activity_main">Simple BLE Connect</string>
 </resources>
