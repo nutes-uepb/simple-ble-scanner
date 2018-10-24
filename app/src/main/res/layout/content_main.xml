@@ -1,33 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/list_devices_scanned_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/list_device_scanned"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-52dp"
+        android:text="Dispositivos encontrados:"
+        />
+
+    <TextView
+        android:id="@+id/list_devices_connected_title"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_centerInParent="true"
+        android:text="Dispositivos conectados:" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_device_scanned"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentTop="false"
+        android:layout_marginTop="52dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
 
-        <TextView
-            android:id="@+id/result_scan_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:text="@null" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_device_connected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/list_devices_connected_title"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp" />
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/status_manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Bem-vindo!"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/status_manager"
+        android:layout_marginBottom="14dp" />
+
+</RelativeLayout>

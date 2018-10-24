@@ -16,6 +16,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    android {
+        defaultConfig {
+            multiDexEnabled true
+        }
+    }
 }
 
 dependencies {
