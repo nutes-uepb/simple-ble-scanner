@@ -293,16 +293,33 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void updateRssi(final Device mDevice) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i <= listDeviceScan.size(); i++)
+                    if (listDeviceScan.get(i).equals(mDevice)) {
+                        listDeviceScan.remove(i);
+                        listDeviceScan.add(i, mDevice);
+                        adapterScan.notifyDataSetChanged();
+                    }
+            }
+        });
+    }
+
     SimpleScanCallback simpleScanCallback = new SimpleScanCallback() {
         @Override
         public void onScanResult(int callbackType, ScanResult scanResult) {
             Log.v(TAG + " - Scan", scanResult.getDevice().getName() + " " + scanResult.getDevice().getAddress());
 
+            scanResult.getRssi();
             BluetoothDevice bluetoothDevice = scanResult.getDevice();
-            Device device = new Device(bluetoothDevice.getName(), bluetoothDevice.getAddress());
+            Device device = new Device(bluetoothDevice.getName(), bluetoothDevice.getAddress(), String.valueOf(scanResult.getRssi()));
             if (!devicesScan.contains(bluetoothDevice)) {
                 listDeviceScan.add(device);
                 devicesScan.add(bluetoothDevice);
+            } else {
+                updateRssi(device);
             }
             adapterScan.notifyDataSetChanged();
         }

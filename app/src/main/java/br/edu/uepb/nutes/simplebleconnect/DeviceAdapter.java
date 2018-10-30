@@ -61,6 +61,7 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceAdap
         viewHolder.deviceModel.setText(device.getModel());
         viewHolder.deviceAddress.setText(device.getAddress());
         viewHolder.deviceService.setText(device.getValue());
+        viewHolder.deviceRSSI.setText(device.getRSSI());
 
     }
 
@@ -77,6 +78,7 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceAdap
         protected TextView deviceModel;
         protected TextView deviceAddress;
         protected TextView deviceService;
+        protected TextView deviceRSSI;
 
         public DeviceAdapterViewHolder(final View itemView) {
             super(itemView);
@@ -86,6 +88,7 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceAdap
             deviceModel = (TextView) itemView.findViewById(R.id.device_model);
             deviceAddress = (TextView) itemView.findViewById(R.id.device_address);
             deviceService = (TextView) itemView.findViewById(R.id.device_value);
+            deviceRSSI = (TextView) itemView.findViewById(R.id.device_rssi);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -29,6 +29,7 @@ public class Device {
     private String model;
     private String address;
     private String value;
+    private String rssi;
 
     public Device(String name, String address) {
         this.name = name;
@@ -48,6 +49,20 @@ public class Device {
         this.model = model;
         this.address = address;
         this.value = value;
+    }
+    public Device(String name, String manufactured, String model, String address, String value, String rssi) {
+        this.name = name;
+        this.manufactured = manufactured;
+        this.model = model;
+        this.address = address;
+        this.value = value;
+        this.rssi = rssi;
+    }
+
+    public Device(String name, String address, String rssi) {
+        this.name = name;
+        this.address = address;
+        this.rssi = rssi;
     }
 
     public String getName() {
@@ -93,5 +108,13 @@ public class Device {
     @Override
     public boolean equals(Object obj) {
         return this.getAddress().equals(((Device) obj).getAddress());
+    }
+
+    public String getRSSI() {
+        return rssi;
+    }
+
+    public void setRSSI(String rssi) {
+        this.rssi = rssi;
     }
 }

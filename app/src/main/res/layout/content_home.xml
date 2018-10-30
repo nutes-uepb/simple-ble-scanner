@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Home"
+    tools:showIn="@layout/activity_home">
+
+    <ImageView
+        android:id="@+id/btn_manager"
+        android:layout_width="90dp"
+        android:layout_height="89dp"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        app:srcCompat="@drawable/ble_transfer"
+        />
+
+    <ImageView
+        android:id="@+id/btn_scan"
+        android:layout_width="90dp"
+        android:layout_height="89dp"
+        android:layout_above="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-165dp"
+        android:clickable="true"
+        app:srcCompat="@drawable/ble_scan" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_below="@+id/btn_manager"
+        android:layout_centerHorizontal="true"
+        android:text="Example Ble Manager"
+        tools:layout_editor_absoluteX="125dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="167dp"
+        android:text="Example Ble Scan"
+        tools:layout_editor_absoluteX="137dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Welcome to Simple BLE Scanner"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="19dp" />
+</RelativeLayout>

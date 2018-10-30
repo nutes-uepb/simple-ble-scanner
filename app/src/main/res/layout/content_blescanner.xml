@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_example_blescanner">
+
+    <TextView
+        android:id="@+id/list_devices_scanned_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="108dp"
+        android:text="Devices Found:" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_device_scanned"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="140dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+
+    <TextView
+        android:id="@+id/status_manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="BLEScanner"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/status_manager"
+        android:layout_marginBottom="14dp" />
+
+    <Spinner
+        android:id="@+id/services"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="51dp"
+
+        />
+
+    <TextView
+        android:id="@+id/filters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/services"
+        android:layout_alignStart="@+id/services"
+        android:layout_marginBottom="-51dp"
+        android:text="Filters:" />
+
+    <EditText
+        android:id="@+id/adress"
+        android:layout_width="86dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/services"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="134dp"
+        android:ems="5"
+        android:inputType="text"
+        android:text="Address"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/name_device"
+        android:layout_width="86dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/services"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="38dp"
+        android:ems="5"
+        android:inputType="text"
+        android:text="Name Device"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/time_scan"
+        android:layout_width="129dp"
+        android:layout_height="36dp"
+        android:layout_alignBottom="@+id/list_devices_scanned_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="22dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:text="Time Scan"
+        android:textSize="12sp" />
+
+
+</RelativeLayout>
