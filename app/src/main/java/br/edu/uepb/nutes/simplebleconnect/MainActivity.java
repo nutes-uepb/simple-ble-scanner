@@ -98,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initViews() {
-
         state = (TextView) findViewById(R.id.list_devices_scanned_title);
         fab = (FloatingActionButton) findViewById(R.id.fab);
         status = (TextView) findViewById(R.id.status_manager);
@@ -135,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 // Log.i(TAG, bleManager.getDevice(((Device) object).getName())+"");
                 bleManager.connect(bleManager.getDevice(((Device) object).getAddress()), bleCallbacks, true);
             } else {
-                status.setText("");
+                status.setText("...");
                 Log.i(TAG, "onClickDevice() of manager");
                 BluetoothGatt bluetoothGatt = bleManager.getGatt(((Device) object).getAddress());
                 bleManager.setupCharacteristic(bluetoothGatt, GattAttributes.SERVICE_GENERIC_ACCESS, "00002a00-0000-1000-8000-00805f9b34fb");

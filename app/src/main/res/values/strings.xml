@@ -94,4 +94,5 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="title_activity_home">Home</string>
+    <string name="title_activity_example_blemanager">ExampleBLEManager</string>
 </resources>
