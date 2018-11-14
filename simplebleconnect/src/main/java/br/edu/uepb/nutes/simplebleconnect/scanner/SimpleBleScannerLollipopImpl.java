@@ -44,6 +44,8 @@ public class SimpleBleScannerLollipopImpl extends SimpleBleScanner {
     private BluetoothAdapter mBluetoothAdapter;
     private BluetoothLeScanner mBluetoothLeScanner;
     private SimpleScanCallback mSimpleScanCallback;
+    private Handler handler;
+    private Runnable runnable;
 
     /**
      * Constructor.
@@ -81,15 +83,16 @@ public class SimpleBleScannerLollipopImpl extends SimpleBleScanner {
 
         mBluetoothLeScanner.startScan(scanFilters, scanSettings, bleScanCallback);
         mScanning = true;
+        handler = new Handler();
 
-        new Handler().postDelayed(new Runnable() {
+        runnable = new Runnable() {
             @RequiresPermission(allOf = {Manifest.permission.BLUETOOTH_ADMIN})
             @Override
             public void run() {
                 stopScan();
-
             }
-        }, scanPeriod);
+        };
+        handler.postDelayed(runnable, scanPeriod);
     }
 
     /**
@@ -100,8 +103,8 @@ public class SimpleBleScannerLollipopImpl extends SimpleBleScanner {
     public void stopScan() {
         mBluetoothLeScanner = mBluetoothAdapter.getBluetoothLeScanner();
         if (mBluetoothLeScanner == null || mSimpleScanCallback == null) return;
-
         mBluetoothLeScanner.stopScan(bleScanCallback);
+        handler.removeCallbacks(runnable);
         mSimpleScanCallback.onFinish();
         mSimpleScanCallback = null;
         mBluetoothLeScanner = null;
