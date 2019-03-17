@@ -21,7 +21,7 @@ allprojects {
 
 ```
 dependencies {
-	 implementation 'com.github.nutes-uepb:simple-ble-scanner:v1.0.0'
+	 implementation 'com.github.nutes-uepb:simple-ble-scanner:v1.0.1'
 }
 ```
 
