@@ -94,7 +94,7 @@ public abstract class SimpleBleScanner {
         private ScanSettings scanSettings;
 
         public Builder() {
-            this.scanPeriod = 1000;
+            this.scanPeriod = 10000; // 10 seconds
             this.scanFilters = new ArrayList<>();
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
