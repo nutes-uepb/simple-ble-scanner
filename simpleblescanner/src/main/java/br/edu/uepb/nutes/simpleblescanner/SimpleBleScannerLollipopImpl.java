@@ -110,14 +110,14 @@ public class SimpleBleScannerLollipopImpl extends SimpleBleScanner {
         @Override
         public void onScanResult(int callbackType, ScanResult result) {
             super.onScanResult(callbackType, result);
+            if (mSimpleScanCallback == null || result == null) return;
             mSimpleScanCallback.onScanResult(callbackType, result);
         }
 
         @Override
         public void onBatchScanResults(List<ScanResult> results) {
             super.onBatchScanResults(results);
-            if (mSimpleScanCallback == null) return;
-
+            if (mSimpleScanCallback == null || results == null) return;
             mSimpleScanCallback.onBatchScanResults(results);
         }
 
@@ -125,7 +125,6 @@ public class SimpleBleScannerLollipopImpl extends SimpleBleScanner {
         public void onScanFailed(int errorCode) {
             super.onScanFailed(errorCode);
             if (mSimpleScanCallback == null) return;
-
             mSimpleScanCallback.onScanFailed(errorCode);
         }
     };
